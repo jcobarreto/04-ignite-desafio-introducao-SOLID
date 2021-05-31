@@ -150,8 +150,11 @@
           "200": {
             "description": "Successful operation",
             "schema": {
-              "$ref": "#/definitions/UserResponse"
+              "$ref": "#/definitions/UserAdminResponse"
             }
+          },
+          "404": {
+            "description": "User not found or not an admin user"
           }
         }
       }
@@ -183,6 +186,29 @@
         "admin": {
           "type": "boolean",
           "default": "false"
+        },
+        "name": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "created_at": {
+          "type": "string"
+        },
+        "updated_at": {
+          "type": "string"
+        }
+      }
+    },
+    "UserAdminResponse": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "admin": {
+          "type": "boolean"
         },
         "name": {
           "type": "string"
